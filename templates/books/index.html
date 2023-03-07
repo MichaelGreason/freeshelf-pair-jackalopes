@@ -11,7 +11,7 @@
     <h1>Our Resources: </h1>
     <article>
         {% for book in books %}
-        <p> <a href="{% url 'home' %}">{{ book }}</a></p>
+        <p><a href="{% url 'home' %}">{{ book }}</a></p>
         {% endfor %}
     <button><a href="{% url 'add_book' %}">Add a book!</a></button>
     </article>
