@@ -8,12 +8,12 @@
     {% block title %}<title>Add Book</title>{% endblock %}
 </head>
 {% block content %}
-<body>
+<body id='add_body'>
     <h3 class='is-size-3'>Adding Books</h3>
     <form method='POST' enctype='multipart/form-data'>
         {% csrf_token %}
         {{ form.as_p }}
-        <button class='button is-info' type='submit'>Add</button>
+        <button id='add_button' class='button is-info' type='submit'>Add</button>
     </form>
     {% endblock %}
 </body>

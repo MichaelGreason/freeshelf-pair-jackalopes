@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +13,7 @@
     <form method='post' enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type='submit'>Save</button>
+        <button id='save_button' class='button is-info' type='submit'>Save</button>
     </form>
     {% endblock %}
 </body>
