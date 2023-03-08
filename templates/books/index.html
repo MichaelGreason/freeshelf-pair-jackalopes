@@ -11,8 +11,7 @@
     {% block content %}
     <h1 class='is-size-3'>Our Resources: </h1>
     <article class='menu'>
-        <p class="menu-label">
-            Resources! </p>
+        <p class="menu-label"></p>
         {% for book in books %}
         <p class='menu-list'><a href="{% url 'detail_book' book.pk %}">{{ book }}</a></p>
         {% endfor %}

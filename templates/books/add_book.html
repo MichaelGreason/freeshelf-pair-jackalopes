@@ -9,7 +9,7 @@
 </head>
 {% block content %}
 <body id='add_body'>
-    <h3 class='is-size-3'>Adding Books</h3>
+    <h1 class='is-size-3'>Adding Books</h1>
     <form method='POST' enctype='multipart/form-data'>
         {% csrf_token %}
         {{ form.as_p }}

@@ -9,11 +9,11 @@
 </head>
 <body>
     {% block content %}
-    <h1 class='is-size-3'>A Closer look</h1>
-    <h2>Title: {{book.title}}</h2>
-    <h2>Author: {{book.author}}</h2>
-    <p>Description: {{book.description}}</p>
-    <p>URL: {{book.url}}</p>
+    <h1 class='is-size-3'>A Closer Look</h1>
+    <h2><strong>Title:</strong> {{book.title}}</h2>
+    <h2><strong>Author:</strong> {{book.author}}</h2>
+    <p><strong>Description: </strong>{{book.description}}</p>
+    <p><strong>URL: </strong>{{book.url}}</p>
     {% if book.image %}
     <img src="{{book.image.url}}" alt="book cover">
     {% endif %}

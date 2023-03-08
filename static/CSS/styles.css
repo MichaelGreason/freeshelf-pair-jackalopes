@@ -1,6 +1,8 @@
 body {
     margin-left: 25px;
+    margin-right: 25px;
     margin-top: 10px;
+    background-color: #FFFCFF;
 }
 
 /* index.html */
@@ -27,4 +29,12 @@ body {
 /* edit.html */
 #save_button {
     margin-top: 15px;
+}
+
+h1 {
+    background-color: #CBD4C2;
+}
+
+#site-header {
+    background-color: #5da4c2;
 }

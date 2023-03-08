@@ -26,7 +26,7 @@ class Resources(models.Model):
         verbose_name_plural = "Resources"
 
     def __str__(self):
-        return f'{self.title}, {self.author}'
+        return f'{self.title}, by {self.author}'
 
 
 class Category(models.Model):
