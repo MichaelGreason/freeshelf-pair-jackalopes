@@ -11,11 +11,13 @@ def private_place(request):
     return HttpResponse("Shhh, members only!", content_type="text/plain")
 
 
+@login_required
 def list_books(request):
     books = Resources.objects.all()
     return render(request, 'books/index.html', {'books': books})
 
 
+@user_passes_test(lambda user: user.is_staff)
 def add_book(request):
     if request.method == 'POST':
         resources_form = ResourcesForm(request.POST, request.FILES)
@@ -26,11 +28,13 @@ def add_book(request):
     return render(request, 'books/add_book.html', {'form': form})
 
 
+@login_required
 def detail_book(request, pk):
     book = get_object_or_404(Resources, pk=pk)
     return render(request, 'books/detail_book.html', {'book': book})
 
 
+@user_passes_test(lambda user: user.is_staff)
 def edit_book(request, pk):
     book = get_object_or_404(Resources, pk=pk)
     if request.method == 'POST':
@@ -42,6 +46,7 @@ def edit_book(request, pk):
     return render(request, 'books/edit_book.html', {'form': form, 'pk': pk})
 
 
+@user_passes_test(lambda user: user.is_staff)
 def delete_book(request, pk):
     book = get_object_or_404(Resources, pk=pk)
     if request.method == 'POST':
