@@ -31,7 +31,7 @@ class Resources(models.Model):
 
 class Category(models.Model):
     title = models.CharField(max_length=50)
-    slug = models.SlugField(max_length=50, null=True, blank=True)
+    slug = models.SlugField(max_length=50, null=True, blankTrue)
 
     class Meta:
         verbose_name_plural = "Categories"
