@@ -16,9 +16,10 @@ class Resources(models.Model):
     category = models.CharField(max_length=50)
     title = models.CharField(max_length=50)
     author = models.CharField(max_length=50)
-    description = models.CharField(max_length=50)
+    description = models.CharField(max_length=500)
     url = models.URLField(max_length=300)
+    image = models.ImageField(upload_to='images', null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.category}, {self.title}, {self.author}, {self.description}, {self.url}'
+        return f'{self.title}, {self.url}'

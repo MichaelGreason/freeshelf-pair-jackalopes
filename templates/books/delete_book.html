@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block title %}<title>Add Book</title>{% endblock %}
+    {% block title %}<title>Delete</title>{% endblock %}
 </head>
-{% block content %}
 <body>
-    <h3>Adding Books</h3>
-    <form method='POST' enctype='multipart/form-data'>
+    {% block content %}
+    <h2>Are you sure?</h2>
+    <form method='post'>
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type='submit'>Add</button>
+        <button type='submit'>Yes</button>
     </form>
+    <a href="{% url 'home' %}">Nevermind</a>
     {% endblock %}
 </body>
 </html>
