@@ -6,4 +6,4 @@ class ResourcesForm(forms.ModelForm):
 
     class Meta:
         model = Resources
-        fields = ('category', 'title', 'author', 'description', 'url', 'image')
+        fields = ('title', 'author', 'description', 'url', 'image')
