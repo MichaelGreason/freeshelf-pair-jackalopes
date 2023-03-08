@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.template.defaultfilters import slugify
+from django.urls import reverse
 
 
 class User(AbstractUser):
@@ -13,7 +15,6 @@ class User(AbstractUser):
 
 
 class Resources(models.Model):
-    category = models.CharField(max_length=50)
     title = models.CharField(max_length=50)
     author = models.CharField(max_length=50)
     description = models.CharField(max_length=500)
@@ -21,5 +22,27 @@ class Resources(models.Model):
     image = models.ImageField(upload_to='images', null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name_plural = "Resources"
+
     def __str__(self):
         return f'{self.title}, {self.author}'
+
+
+class Category(models.Model):
+    title = models.CharField(max_length=50)
+    slug = models.SlugField(max_length=50, null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = "Categories"
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse("category_detail", kwargs={"slug": self.slug})
