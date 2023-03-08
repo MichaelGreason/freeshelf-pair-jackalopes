@@ -9,11 +9,13 @@
     <title>Edit Book</title>
 </head>
 <body>
-    Edit Book
+    {% block content %}
+    <h3 class='is-size-3'>Edit Book</h3>
     <form method='post' enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button type='submit'>Save</button>
     </form>
+    {% endblock %}
 </body>
 </html>

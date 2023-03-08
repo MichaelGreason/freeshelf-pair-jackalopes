@@ -9,10 +9,10 @@
 </head>
 <body>
     {% block content %}
-    <h2>Are you sure?</h2>
+    <h2 class='is-size-3'>Are you sure?</h2>
     <form method='post'>
         {% csrf_token %}
-        <button type='submit'>Yes</button>
+        <button class='button is-danger' type='submit'>Yes</button>
     </form>
     <a href="{% url 'home' %}">Nevermind</a>
     {% endblock %}
