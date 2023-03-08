@@ -1,6 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import user_passes_test
 from .models import Resources
 from .forms import ResourcesForm
+from django.http import HttpResponse
+
+
+@login_required
+def private_place(request):
+    return HttpResponse("Shhh, members only!", content_type="text/plain")
 
 
 def list_books(request):
@@ -40,3 +48,8 @@ def delete_book(request, pk):
         book.delete()
         return redirect('home')
     return render(request, 'books/delete_book.html')
+
+
+@user_passes_test(lambda user: user.is_staff)
+def staff_place(request):
+    return HttpResponse("Employees must wash hands", content_type="text/plain")
