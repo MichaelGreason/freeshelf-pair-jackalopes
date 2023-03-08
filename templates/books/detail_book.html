@@ -15,7 +15,7 @@
     <h2>{{book.author}}</h2>
     <p>{{book.description}}</p>
     {% if book.image %}
-    <img src="{{book.image.url}}" alt="resources cover">
+    <img src="{{book.image.url}}" alt="book cover">
     {% endif %}
     <button><a href="{% url 'edit_book' book.pk %}">Edit this entry</a></button>
     <button><a href="{% url 'delete_book' book.pk %}">Delete this entry</a></button>
