@@ -18,6 +18,11 @@ def add_book(request):
     return render(request, 'books/add_book.html', {'form': form})
 
 
+def detail_book(request, pk):
+    book = get_object_or_404(Resources, pk=pk)
+    return render(request, 'books/detail_book.html', {'book': book})
+
+
 def edit_book(request, pk):
     book = get_object_or_404(Resources, pk=pk)
     if request.method == 'POST':
@@ -27,3 +32,11 @@ def edit_book(request, pk):
             return redirect('home')
     form = ResourcesForm(instance=book)
     return render(request, 'books/edit_book.html', {'form': form, 'pk': pk})
+
+
+def delete_book(request, pk):
+    book = get_object_or_404(Resources, pk=pk)
+    if request.method == 'POST':
+        book.delete()
+        return redirect('home')
+    return render(request, 'books/delete_book.html')
