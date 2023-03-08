@@ -9,16 +9,17 @@
 </head>
 <body>
     {% block content %}
-    <h1>A Closer look</h1>
-    <h2>{{book.category}}</h2>
-    <h2>{{book.title}}</h2>
-    <h2>{{book.author}}</h2>
-    <p>{{book.description}}</p>
+    <h1 class='is-size-3'>A Closer look</h1>
+    <h2>Category: {{book.category}}</h2>
+    <h2>Title: {{book.title}}</h2>
+    <h2>Author: {{book.author}}</h2>
+    <p>Description: {{book.description}}</p>
+    <p>URL: {{book.url}}</p>
     {% if book.image %}
     <img src="{{book.image.url}}" alt="book cover">
     {% endif %}
-    <button><a href="{% url 'edit_book' book.pk %}">Edit this entry</a></button>
-    <button><a href="{% url 'delete_book' book.pk %}">Delete this entry</a></button>
+    <button class='button is-warning'><a href="{% url 'edit_book' book.pk %}">Edit this entry</a></button>
+    <button class='button is-danger'><a href="{% url 'delete_book' book.pk %}">Delete this entry</a></button>
 {% endblock %}
 </body>
 </html>

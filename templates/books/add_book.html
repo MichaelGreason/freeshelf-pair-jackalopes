@@ -9,11 +9,11 @@
 </head>
 {% block content %}
 <body>
-    <h3>Adding Books</h3>
+    <h3 class='is-size-3'>Adding Books</h3>
     <form method='POST' enctype='multipart/form-data'>
         {% csrf_token %}
         {{ form.as_p }}
-        <button type='submit'>Add</button>
+        <button class='button is-info' type='submit'>Add</button>
     </form>
     {% endblock %}
 </body>

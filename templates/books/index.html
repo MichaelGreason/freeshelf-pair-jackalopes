@@ -10,12 +10,14 @@
 </head>
 <body>
     {% block content %}
-    <h1>Our Resources: </h1>
-    <article>
+    <h1 class='is-size-3'>Our Resources: </h1>
+    <article class='menu'>
+        <p class="menu-label">
+            Resources! </p>
         {% for book in books %}
-        <p><a href="{% url 'detail_book' book.pk %}">{{ book }}</a></p>
+        <p class='menu-list'><a href="{% url 'detail_book' book.pk %}">{{ book }}</a></p>
         {% endfor %}
-    <button><a href="{% url 'add_book' %}">Add a book!</a></button>
+    <button class='button is-primary'><a href="{% url 'add_book' %}">Add a book!</a></button>
     </article>
     {% endblock %}
 </body>
