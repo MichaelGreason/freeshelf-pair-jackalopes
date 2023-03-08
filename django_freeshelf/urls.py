@@ -27,10 +27,9 @@ urlpatterns = [
     path('book/<int:pk>', views.detail_book, name='detail_book'),
     path('book/<int:pk>/edit', views.edit_book, name='edit_book'),
     path('book/<int:pk>/delete', views.delete_book, name='delete_book'),
-    # path("private_place/", views.private_place, name='private'),
-    # path("accounts/", include("django.contrib.auth.urls")),
-    # path("accounts/", templates.registration.login, name='login'),
-    # path("staff_place/", views.staff_place, name='staff'),
+    path("private_place/", views.private_place, name='private'),
+    path("accounts/", include("registration.backends.simple.urls")),
+    path("staff_place/", views.staff_place, name='staff'),
 ]
 
 if settings.DEBUG:

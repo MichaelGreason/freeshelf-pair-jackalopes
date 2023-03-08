@@ -10,6 +10,7 @@ django-environ = "*"
 werkzeug = "*"
 django-extensions = "*"
 pillow = "*"
+django-registration-redux = "*"
 
 [dev-packages]
 
