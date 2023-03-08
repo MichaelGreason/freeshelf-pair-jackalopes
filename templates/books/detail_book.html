@@ -18,8 +18,8 @@
     {% if book.image %}
     <img src="{{book.image.url}}" alt="book cover">
     {% endif %}
-    <button class='button is-warning'><a href="{% url 'edit_book' book.pk %}">Edit this entry</a></button>
-    <button class='button is-danger'><a href="{% url 'delete_book' book.pk %}">Delete this entry</a></button>
+    <button id='edit_button' class='button is-warning'><a href="{% url 'edit_book' book.pk %}">Edit this entry</a></button>
+    <button id='delete_button' class='button is-danger'><a href="{% url 'delete_book' book.pk %}">Delete this entry</a></button>
 {% endblock %}
 </body>
 </html>

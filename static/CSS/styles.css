@@ -1,0 +1,30 @@
+body {
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+/* index.html */
+#add_book_button {
+    margin-left: 14px;
+    margin-top: 15px;
+}
+
+/* detail.html*/
+#delete_button {
+    margin-top: 15px;
+}
+
+#edit_button {
+    margin-top: 15px;
+}
+
+/* add.html */
+#add_button {
+    margin-left: 0px;
+    margin-top: 25px;
+}
+
+/* edit.html */
+#save_button {
+    margin-top: 15px;
+}
