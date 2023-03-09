@@ -13,8 +13,10 @@ def private_place(request):
 
 @login_required
 def list_books(request):
+    categories = Category.objects.all()
     books = Resources.objects.all()
-    return render(request, 'books/index.html', {'books': books})
+    return render(request, 'books/index.html', {'books': books,
+                                                'categories': categories})
 
 
 @user_passes_test(lambda user: user.is_staff)
