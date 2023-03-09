@@ -31,6 +31,7 @@ urlpatterns = [
     path("accounts/", include("registration.backends.simple.urls")),
     path("staff_place/", views.staff_place, name='staff'),
     path('category/<slug:slug>', views.resource_category, name='category'),
+    path('book/favorite/<int:pk>', views.favorite_book, name='favorite'),
 ]
 
 if settings.DEBUG:

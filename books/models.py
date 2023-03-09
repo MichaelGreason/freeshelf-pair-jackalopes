@@ -6,6 +6,7 @@ from django.urls import reverse
 
 class User(AbstractUser):
     location = models.CharField(blank=True, null=True, max_length=250)
+    favorites = models.ManyToManyField(to='Resources')
 
     def __repr__(self):
         return f"<User username={self.username}>"
@@ -48,3 +49,4 @@ class Category(models.Model):
 
     def get_absolute_url(self):
         return reverse("category", kwargs={"slug": self.slug})
+
