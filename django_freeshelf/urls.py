@@ -30,6 +30,7 @@ urlpatterns = [
     path("private_place/", views.private_place, name='private'),
     path("accounts/", include("registration.backends.simple.urls")),
     path("staff_place/", views.staff_place, name='staff'),
+    path('category/<slug:slug>', views.resource_category, name='category'),
 ]
 
 if settings.DEBUG:

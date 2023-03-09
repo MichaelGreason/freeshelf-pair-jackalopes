@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
-from .models import Resources
+from .models import Resources, Category
 from .forms import ResourcesForm
 from django.http import HttpResponse
 
@@ -58,3 +58,9 @@ def delete_book(request, pk):
 @user_passes_test(lambda user: user.is_staff)
 def staff_place(request):
     return HttpResponse("Employees must wash hands", content_type="text/plain")
+
+
+def resource_category(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+    resources = Resources.objects.filter(category=category)
+    return render(request, 'books/category.html', {'resources': resources})

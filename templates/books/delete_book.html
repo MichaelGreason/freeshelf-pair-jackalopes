@@ -9,7 +9,7 @@
 </head>
 <body>
     {% block content %}
-    <h1 class='is-size-3'>Are you sure?</h1>
+    <h1 class='is-size-3'>Are you sure? <ion-icon name="sad-outline"></ion-icon></h1>
     <form method='post'>
         {% csrf_token %}
         <button class='button is-danger' type='submit'>Yes</button>

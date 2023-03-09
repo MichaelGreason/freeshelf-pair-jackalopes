@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <h1 class='is-size-3'>Our Resources: </h1>
+    <article class='menu'>
+        <p class="menu-label"></p>
+        {% for resource in resources %}
+        <p class='menu-list'><a href="{% url 'detail_book' resource.pk %}"><ion-icon name="skull"></ion-icon> {{ resource }}</a></p>
+        {% endfor %}
+    <button id='add_book_button' class='button is-primary'><a href="{% url 'add_book' %}">Add a resource!</a></button>
+    </article>
+    {% endblock %}

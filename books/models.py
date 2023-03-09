@@ -21,6 +21,8 @@ class Resources(models.Model):
     url = models.URLField(max_length=300)
     image = models.ImageField(upload_to='images', null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
+    category = models.ForeignKey(
+        to="Category", on_delete=models.CASCADE, blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "Resources"
