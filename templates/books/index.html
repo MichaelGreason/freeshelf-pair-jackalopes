@@ -10,6 +10,10 @@
 <body>
     {% block content %}
     <h1 class='is-size-3'>Our Resources: </h1>
+    <header>
+        {% for category in categories %}
+        <span> | <a href={{ category.get_absolute_url }}>{{ category }} </a> | </span>
+        {% endfor %}
     <article class='menu'>
         <p class="menu-label"></p>
         {% for book in books %}
