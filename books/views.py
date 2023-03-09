@@ -64,3 +64,9 @@ def resource_category(request, slug):
     category = get_object_or_404(Category, slug=slug)
     resources = Resources.objects.filter(category=category)
     return render(request, 'books/category.html', {'resources': resources})
+
+
+def favorite_book(request, pk):
+    resource = get_object_or_404(Resources, pk=pk)
+    request.user.favorites.add(resource)
+    return redirect('home')
