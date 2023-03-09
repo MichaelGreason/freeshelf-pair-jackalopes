@@ -18,7 +18,7 @@ from django.urls import path, include
 from books import views
 from django.conf import settings
 from django.conf.urls.static import static
-# from templates import login
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
