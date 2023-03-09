@@ -38,3 +38,9 @@ h1 {
 #site-header {
     background-color: #5da4c2;
 }
+
+#home-button {
+    display: flex;
+    justify-content: end;
+    margin-right: 15px;
+}
