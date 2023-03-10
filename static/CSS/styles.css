@@ -11,6 +11,15 @@ body {
     margin-top: 15px;
 }
 
+#favorite {
+    margin-left: 6px;
+    margin-top: 4px;
+}
+
+#flexbox {
+    display: flex;
+}
+
 /* detail.html*/
 #delete_button {
     margin-top: 15px;

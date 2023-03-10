@@ -17,8 +17,10 @@
     <article class='menu'>
         <p class="menu-label"></p>
         {% for book in books %}
-        <p class='menu-list'><a href="{% url 'detail_book' book.pk %}"><ion-icon name="skull"></ion-icon> {{ book }}</a></p>
-        <p><a href="{% url 'favorite' book.pk %}"> <3 </a>
+        <div id=flexbox>
+        <span id='favorite'> <a id='favorite' href="{% url 'favorite' book.pk %}"> ❤ </a></span>
+        <span class='menu-list'><a href="{% url 'detail_book' book.pk %}"><ion-icon name="skull"></ion-icon> {{ book }}</a></span>
+        </div>
         {% endfor %}
     <button id='add_book_button' class='button is-primary'><a href="{% url 'add_book' %}">Add a resource!</a></button>
     </article>
